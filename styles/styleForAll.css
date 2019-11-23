@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+body {
+    background-image: radial-gradient(darkblue, green 100%);
+}
+
+.wrapper {
+    width: 1000px;
+    margin: auto;
+}
+.background{
+    background-image: url("../pic/bg.png");
+    background-repeat: repeat;
+    background-size: 200px;
+}
+nav li a img {
+    height: 70px;
+}
+
+header {
+    width: 100%;
+    min-width: 960px;
+    height: 200px;
+    text-align: right;
+    background-image: url("../pic/banner-1571984_960_720.jpg");
+    background-position: center;
+    background-size: cover;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 40px 0 0 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: center;
+    display: block;
+    padding: 20px;
+}
+
+
+footer {
+    text-align: center;
+    background-image: url(../pic/milky-way-2675322_960_720.webp);
+    padding:8px 0 8px 0 ;
+    color: whitesmoke;
+}
+
+nav a:hover {
+    background-image: radial-gradient(green, darkblue 100%);
+    color: darkred;
+    transition: 0.5s
+
+}
+
+header div {
+    display: inline-block;
+    margin: 10px 3px 0 0;
+    min-width: 600px;
+    color: darkred;
+}
+
+header div span {
+    font-size: 30px;
+}
+
+#logged {
+    position: relative;
+    top: -47px;
+    right: 20px;
+    z-index: -1;
+}
+
+#unlogged {
+    position: relative;
+    top: 0;
+    right: 20px;
+    z-index: -1;
+}
+
+form {
+    display: inline-block;
+}
+
+article {
+
+    height: 700px;
+    margin: auto;
+    background-image: url("../pic/goblin-2018013_960_720.webp");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.6;
+}
