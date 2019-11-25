@@ -1,0 +1,54 @@
+table{
+    width: 800px;
+    margin: auto;
+    color: white;
+}
+tr{
+    text-align: center;
+}
+
+table, tr, td, th {
+    border: green dashed 2px;
+    border-collapse: collapse;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+article form {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+article{
+    text-align: center;
+}
+
+#add{
+    margin: 50px;
+}
+.twoColumns {
+    margin: auto;
+}
+
+.dialog {
+    padding: 20px;
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: darkslateblue;
+    width: 300px;
+    height:300px;
+}
+.dialog button {
+    margin-top: 10px;
+}
+
+.dialogContent {
+    width:220px;
+    margin: auto;
+}

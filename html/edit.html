@@ -6,10 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/styleForAll.css">
-    <link rel="stylesheet" href="../styles/indexStyle.css">
-    <link rel="stylesheet" href="../styles/showAllStyle.css">
+    <link rel="stylesheet" href="../styles/editStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <title>Main GOOOOOOOBLINS</title>
+    <title>EDIT GOOOOOOOBLIN</title>
 
 </head>
 <body>
@@ -45,20 +44,43 @@
             </div>
         </header>
         <article>
+            <form>
+                <label for="goblinName">Goblin's name:</label>
+                <input type="text" name="goblinName" id="goblinName"/>
+                <label for="goblinAge">Goblin's age:</label>
+                <input type="text" name="goblinAge" id="goblinAge"/>
+                <button id="editGoblin">Save</button>
+            </form>
+
             <table>
-                <caption>GOOOOOOOBLINS</caption>
+                <caption>WEAPONS</caption>
                 <thead>
                 <tr>
                     <th>name</th>
-                    <th>age</th>
-                    <th>edit</th>
+                    <th>power</th>
                     <th>delete</th>
                 </tr>
                 </thead>
-                <tbody id="goblinsTableBody">
+                <tbody id="goblinsWeapon">
 
                 </tbody>
             </table>
+            <button id="add">Add weapon</button>
+            <div class="dialog" id="addDialog">
+                <div class="dialogContent">
+                    <form class="twoColumns">
+                        <label for="idWeapon">ID weapon</label>
+                        <input id="idWeapon"/>
+                        <label for="nameWeapon">Name</label>
+                        <input id="nameWeapon"/>
+                        <label for="powerWeapon">Power</label>
+                        <input id="powerWeapon"/>
+
+                        <button id="cancel">Cancel</button>
+                    </form>
+                    <button id="save">Save</button>
+                </div>
+            </div>
         </article>
         <footer>
             footer
@@ -66,6 +88,7 @@
     </div>
 </div>
 <script src="../scripts/script.js"></script>
-<script src="../scripts/showAll.js"></script>
+<script src="../scripts/edit.js"></script>
+
 </body>
 </html>

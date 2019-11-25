@@ -13,11 +13,13 @@ body {
     width: 1000px;
     margin: auto;
 }
-.background{
+
+.background {
     background-image: url("../pic/bg.png");
     background-repeat: repeat;
     background-size: 200px;
 }
+
 nav li a img {
     height: 70px;
 }
@@ -48,18 +50,23 @@ nav a {
     text-align: center;
     display: block;
     padding: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
 }
 
 
 footer {
     text-align: center;
     background-image: url(../pic/milky-way-2675322_960_720.webp);
-    padding:8px 0 8px 0 ;
+    padding: 8px 0 8px 0;
     color: whitesmoke;
 }
 
 nav a:hover {
-    background-image: radial-gradient(green, darkblue 100%);
     color: darkred;
     transition: 0.5s
 
@@ -78,14 +85,14 @@ header div span {
 
 #logged {
     position: relative;
-    top: -47px;
+    top: -90px;
     right: 20px;
     z-index: -1;
 }
 
 #unlogged {
     position: relative;
-    top: 0;
+    top: -29px;
     right: 20px;
     z-index: -1;
 }
@@ -103,3 +110,77 @@ article {
     background-size: cover;
     opacity: 0.6;
 }
+
+button {
+    width: 170px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+nav a:before, button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+nav a:active, button:active {
+    color: #000
+}
+
+nav a:active:after, button:active:after {
+    background: transparent;
+}
+
+nav a:hover:before, button:hover:before {
+    opacity: 1;
+}
+
+nav a:after, button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+tbody tr:nth-child(odd) {
+    background-color: seagreen;
+}
+
+tbody tr:nth-child(even) {
+    background-color: indianred;
+}
+

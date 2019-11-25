@@ -2,6 +2,7 @@ let login;
 let password;
 let buttonLogin = document.getElementById('buttonLogin');
 let buttonLogout = document.getElementById('buttonLogout');
+let buttonAdd = document.getElementById('addGoblin');
 
 function getLogin() {
     return localStorage.getItem('user');
@@ -26,16 +27,18 @@ function isLogged() {
     return false;
 }
 
-buttonLogin.addEventListener("click", (e) => {
+buttonLogin.addEventListener("click", () => {
     document.getElementById('unlogged').style.zIndex = "-1";
     document.getElementById('logged').style.zIndex = '1';
     login = document.getElementById('login').value;
     password = document.getElementById('password').value;
     onLogin();
+    let auth = btoa(login + ":" + password);
+    window.localStorage.setItem('auth', auth);
     document.getElementById('userName').innerHTML = `WELCOME BACK ${login}`;
 });
 
-buttonLogout.addEventListener("click", (e) => {
+buttonLogout.addEventListener("click", () => {
     document.getElementById('unlogged').style.zIndex = "1";
     document.getElementById('logged').style.zIndex = '-1';
     onLogOut();
@@ -43,17 +46,20 @@ buttonLogout.addEventListener("click", (e) => {
     document.getElementById('password').value = '';
 });
 
+
 function generateLogged() {
     if (isLogged()) {
         document.getElementById('unlogged').style.zIndex = "-1";
         document.getElementById('logged').style.zIndex = '1';
-        document.getElementById('userName').innerHTML = `WELCOME BACK ${localStorage.getItem('user')}`;
+        document.getElementById('userName').innerHTML = `WELCOME BACK ${getLogin()}`;
     } else {
         document.getElementById('unlogged').style.zIndex = "1";
         document.getElementById('logged').style.zIndex = '-1';
     }
 
 }
+
+
 
 window.onload = function (e) {
     generateLogged();
