@@ -89,15 +89,13 @@ function showPopout(){
 function saveWeapon(){
     let name = document.getElementById('nameWeapon').value;
     let power = document.getElementById('powerWeapon').value;
-    let idWeapon = document.getElementById('idWeapon').value;
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open('PUT', 'http://localhost:8080/api/goblins/'
-        + localStorage.getItem('idGoblin') + '/weapons/' + idWeapon, true);
+    xhttp.open('POST', 'http://localhost:8080/api/goblins/' + localStorage.getItem('idGoblin') + '/weapons/', true);
 
     xhttp.setRequestHeader("Authorization", `Basic ${localStorage.getItem('auth')}`);
     xhttp.setRequestHeader('Content-type', 'application/json');
-    let expense = { name: name, power: 5};
+    let expense = { name: name, power: power};
     xhttp.send(JSON.stringify(expense));
 }
 
