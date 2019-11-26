@@ -4,8 +4,9 @@ function getGoblins() {
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let goblins = JSON.parse(this.responseText);
-            console.log(goblins);
-            createHTML(goblins)
+            createHTML(goblins);
+        } else if (this.status >= 400) {
+            console.log("status = " + this.status);
         }
     };
 
@@ -56,8 +57,14 @@ function createHTML(goblins) {
         })
     }
 }
-function deleteGoblin(goblin){
+
+function deleteGoblin(goblin) {
     let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.status >= 400) {
+            console.log("status = " + this.status);
+        }
+    };
     xhttp.open('DELETE', 'http://localhost:8080/api/goblins/' + goblin.id, true);
     xhttp.setRequestHeader("Authorization", `Basic ${localStorage.getItem('auth')}`);
     xhttp.send();

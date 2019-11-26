@@ -1,13 +1,14 @@
-table{
+table {
     width: 800px;
     margin: auto;
     color: white;
 }
-tr{
+
+tr {
     text-align: center;
 }
 
-table, tr, td, th {
+td, th {
     border: green dashed 2px;
     border-collapse: collapse;
 }
@@ -20,13 +21,15 @@ article form {
     margin-left: 200px;
     margin-top: 20px;
 }
-article{
+
+article {
     text-align: center;
 }
 
-#add{
+#add {
     margin: 50px;
 }
+
 .twoColumns {
     margin: auto;
 }
@@ -42,13 +45,25 @@ article{
     margin: auto;
     background-color: darkslateblue;
     width: 300px;
-    height:300px;
+    height: 300px;
 }
+
 .dialog button {
     margin-top: 10px;
 }
 
 .dialogContent {
-    width:220px;
+    width: 220px;
     margin: auto;
 }
+
+tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr
+}
+
+td {
+    line-height: 50px;
+}
+
+

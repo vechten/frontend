@@ -42,6 +42,7 @@ buttonLogout.addEventListener("click", () => {
     document.getElementById('unlogged').style.zIndex = "1";
     document.getElementById('logged').style.zIndex = '-1';
     onLogOut();
+    window.localStorage.removeItem('auth');
     document.getElementById('login').value = '';
     document.getElementById('password').value = '';
 });

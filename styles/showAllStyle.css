@@ -6,8 +6,7 @@ table{
 tr{
     text-align: center;
 }
-
-table, tr, td, th {
+td, th {
     border: green dashed 2px;
     border-collapse: collapse;
 }
@@ -16,3 +15,16 @@ th {
     text-transform: uppercase;
 }
 
+caption{
+    font-size: 30px;
+}
+
+tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-collapse: collapse;
+}
+
+td {
+    line-height: 50px;
+}

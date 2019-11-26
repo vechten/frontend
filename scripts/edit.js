@@ -4,9 +4,10 @@ function getGoblin() {
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let goblin = JSON.parse(this.responseText);
-            console.log(goblin);
             editGoblin(goblin);
             createWeapons(goblin);
+        } else if (this.status >= 400) {
+            console.log("status = " + this.status);
         }
     };
 
@@ -25,7 +26,11 @@ function editGoblin(goblin) {
         let age = document.getElementById('goblinAge').value;
 
         let xhttp = new XMLHttpRequest();
-
+        xhttp.onreadystatechange = function () {
+            if (this.status >= 400) {
+                console.log("status = " + this.status);
+            }
+        };
         xhttp.open('PUT', 'http://localhost:8080/api/goblins/'
             + localStorage.getItem('idGoblin'), true);
 
@@ -66,6 +71,11 @@ function createWeapons(goblin) {
 
 function deleteWeapon(i) {
     let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.status >= 400) {
+            console.log("status = " + this.status);
+        }
+    };
     xhttp.open('DELETE', 'http://localhost:8080/api/goblins/' + localStorage.getItem('idGoblin') + '/weapons/' + i, true
     )
     ;
@@ -73,6 +83,7 @@ function deleteWeapon(i) {
     xhttp.send();
     window.location.reload(true);
 }
+
 addButton = document.getElementById('add');
 addButton.addEventListener('click', (e) => {
     showPopout();
@@ -82,20 +93,23 @@ saveButton.addEventListener('click', (e) => {
     saveWeapon();
 });
 
-function showPopout(){
+function showPopout() {
     document.getElementById('addDialog').style.display = 'block';
 }
 
-function saveWeapon(){
+function saveWeapon() {
     let name = document.getElementById('nameWeapon').value;
     let power = document.getElementById('powerWeapon').value;
     let xhttp = new XMLHttpRequest();
-
+    xhttp.onreadystatechange = function () {
+        if (this.status >= 400) {
+            console.log("status = " + this.status);
+        }
+    };
     xhttp.open('POST', 'http://localhost:8080/api/goblins/' + localStorage.getItem('idGoblin') + '/weapons/', true);
-
     xhttp.setRequestHeader("Authorization", `Basic ${localStorage.getItem('auth')}`);
     xhttp.setRequestHeader('Content-type', 'application/json');
-    let expense = { name: name, power: power};
+    let expense = {name: name, power: power};
     xhttp.send(JSON.stringify(expense));
 }
 
